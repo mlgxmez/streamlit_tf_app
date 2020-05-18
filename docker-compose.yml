@@ -1,0 +1,18 @@
+version: '3'
+
+services: 
+  classifier:
+    environment:
+      - MODEL_NAME=$MODEL_NAME
+    image: tensorflow/serving
+    ports: 
+      - "8501:8501"
+    volumes: 
+      - ./models/$MODEL_NAME:/models/$MODEL_NAME
+  front:
+    build: 
+      context: .
+      dockerfile: Dockerfile-app
+    image: streamlit-app
+    ports: 
+      - "8503:8503"
