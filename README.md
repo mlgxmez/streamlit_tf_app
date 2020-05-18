@@ -5,7 +5,7 @@ This repo shows a minimal example to build your web app with Streamlit + Tensorf
 
 ![Web app image](/img/wombat.png)
 
-Once the app is running you can pass the link of an image from the web. Tap on the *Classify* button and immediately it tells you the class of the image :dizzy:
+Once the app is running you can pass the link of an image from the web. Tap on the *Classify* button and it tells you immediately the class of the image :dizzy:
 
 ## Instructions to run the web app
 
