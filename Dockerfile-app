@@ -4,6 +4,8 @@ RUN pip install numpy pandas Pillow streamlit
 
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
+ARG APP_FOLDER=/home/app
+ARG APP_NAME=front_classifier.py
 
 RUN mkdir -p /root/.streamlit
 
@@ -19,9 +21,9 @@ enableCORS = false\n\
 " > /root/.streamlit/config.toml'
 
 EXPOSE 8503
-RUN mkdir -p /home/app
-COPY app/front_classifier.py /home/app/front_classifier.py
-WORKDIR /home/app
+RUN mkdir -p $APP_FOLDER
+COPY app/$APP_NAME $APP_FOLDER/$APP_NAME
+WORKDIR $APP_FOLDER
 
 
 CMD streamlit run front_classifier.py
